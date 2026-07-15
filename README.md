@@ -1,6 +1,7 @@
 # 🤖 AI Test Intelligence Platform
 
-An AI-powered QA Automation platform that helps Test Engineers analyze test failures, generate test cases, and create professional bug reports using Google Gemini AI.
+🚀 Live Demo: https://ai-test-intelligence.vercel.app
+⭐ AI-powered QA Automation Platform built using React + FastAPI + Gemini AI
 
 ---
 
