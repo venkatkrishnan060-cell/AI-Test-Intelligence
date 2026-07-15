@@ -14,3 +14,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+.empty-chart {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 500;
+  border: 2px dashed #334155;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+}
