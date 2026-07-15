@@ -23,7 +23,7 @@ function TestCaseGenerator() {
         try {
 
             const res = await axios.post(
-                "http://127.0.0.1:8000/generate-testcases",
+                "https://ai-test-intelligence.onrender.com/generate-testcases",
                 {
                     feature
                 }
