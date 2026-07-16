@@ -90,7 +90,7 @@ const categoryData = Object.entries(categoryMap).map(([name, value]) => ({
   </ResponsiveContainer>
 ) : (
   <div className="empty-chart">
-    📈 Failure category analytics will appear here after log analysis.
+    📊 Analyze a test log to visualize severity distribution.
   </div>
 )}
     </div>
@@ -121,7 +121,7 @@ const categoryData = Object.entries(categoryMap).map(([name, value]) => ({
         </ResponsiveContainer>
       ) : (
         <div className="empty-chart">
-          📊 Analyze a test log to visualize severity distribution.
+          📈 Failure category analytics will appear here after log analysis.
         </div>
       )}
     </div>
