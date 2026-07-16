@@ -8,13 +8,14 @@ import History from "./components/History";
 import TestCaseGenerator from "./components/TestCaseGenerator";
 import BugReportGenerator from "./components/BugReportGenerator";
 import logo from "./assets/favicon.png";
+import SplashScreen from "./components/SplashScreen";
 
 function App() {
   const [log, setLog] = useState("");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-
+  const [showSplash, setShowSplash] = useState(true);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
 const [showInstall, setShowInstall] = useState(false);
   useEffect(() => {
@@ -29,6 +30,13 @@ const [showInstall, setShowInstall] = useState(false);
   return () => {
     window.removeEventListener("beforeinstallprompt", handler);
   };
+}, []);
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowSplash(false);
+  }, 3300);
+
+  return () => clearTimeout(timer);
 }, []);
 const installApp = async () => {
   if (!deferredPrompt) return;
@@ -185,6 +193,9 @@ ${result.jiraDescription}
 
     doc.save("AI_Test_Intelligence_Report.pdf");
   };
+  if (showSplash) {
+  return <SplashScreen />;
+}
 
   return (
     <div className="container">
