@@ -343,3 +343,37 @@ input[type="file"]::file-selector-button:hover {
     background:#22c55e;
     color:white;
 }
+
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.hero-logo{
+    width:120px;
+    height:100px;
+    margin-top:2px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+.hero-title{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:18px;
+}
+
+.hero-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+

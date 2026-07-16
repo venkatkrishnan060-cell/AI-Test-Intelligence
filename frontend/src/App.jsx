@@ -7,6 +7,7 @@ import Charts from "./components/Charts";
 import History from "./components/History";
 import TestCaseGenerator from "./components/TestCaseGenerator";
 import BugReportGenerator from "./components/BugReportGenerator";
+import logo from "./assets/favicon.png";
 
 function App() {
   const [log, setLog] = useState("");
@@ -157,14 +158,25 @@ ${result.jiraDescription}
 
   return (
     <div className="container">
-      <h1 className="title">
-        🤖 AI Test Intelligence Platform
-      </h1>
+    <div className="hero-title">
 
-      <p className="subtitle">
-    Analyze Playwright, Selenium & API Test Failures using AI
-      </p>
+    <img
+        src={logo}
+        alt="AI Test Intelligence"
+        className="hero-logo"
+    />
 
+    <div className="hero-text">
+        <h1 className="title">
+            AI Test Intelligence Platform
+        </h1>
+
+        <p className="subtitle">
+            Analyze Playwright, Selenium & API Test Failures using AI
+        </p>
+    </div>
+
+</div>
             <Dashboard history={history} />
 
       <Charts history={history} />
