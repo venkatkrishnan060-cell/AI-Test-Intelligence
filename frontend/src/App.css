@@ -377,3 +377,20 @@ input[type="file"]::file-selector-button:hover {
     justify-content:center;
 }
 
+.install-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.install-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}

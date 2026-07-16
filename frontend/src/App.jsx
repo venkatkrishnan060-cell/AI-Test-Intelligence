@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
 import "./App.css";
@@ -14,6 +14,36 @@ function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
+
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+const [showInstall, setShowInstall] = useState(false);
+  useEffect(() => {
+  const handler = (e) => {
+    e.preventDefault();
+    setDeferredPrompt(e);
+    setShowInstall(true);
+  };
+
+  window.addEventListener("beforeinstallprompt", handler);
+
+  return () => {
+    window.removeEventListener("beforeinstallprompt", handler);
+  };
+}, []);
+const installApp = async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const { outcome } = await deferredPrompt.userChoice;
+
+  if (outcome === "accepted") {
+    console.log("App Installed");
+  }
+
+  setDeferredPrompt(null);
+  setShowInstall(false);
+};
 
   const [history, setHistory] = useState(() => {
   const saved = localStorage.getItem("analysisHistory");
@@ -174,6 +204,11 @@ ${result.jiraDescription}
         <p className="subtitle">
             Analyze Playwright, Selenium & API Test Failures using AI
         </p>
+        {showInstall && (
+  <button className="install-btn" onClick={installApp}>
+    📱 Install AI Test Intelligence
+  </button>
+)}
     </div>
 
 </div>
