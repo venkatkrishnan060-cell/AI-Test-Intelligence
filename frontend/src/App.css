@@ -462,21 +462,63 @@ html{
 
 .top-nav{
 
-    gap:10px;
+    display:grid;
 
-    padding:15px;
+    grid-template-columns:1fr 1fr;
 
+    gap:12px;
+
+    width:100%;
 }
 
 .top-nav a{
 
-    width:45%;
+    width:100%;
 
     text-align:center;
 
-    font-size:14px;
-
     padding:12px;
+}
+}
 
+@media (max-width:768px){
+
+.hero-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:15px;
+}
+
+.hero-logo{
+
+    width:110px;
+
+    height:auto;
+}
+
+.hero-text{
+
+    width:100%;
+}
+
+.title{
+
+    font-size:38px;
+
+    line-height:1.15;
+}
+
+.subtitle{
+
+    font-size:18px;
+
+    padding:0 15px;
 }
 }
