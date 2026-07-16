@@ -208,34 +208,54 @@ ${result.jiraDescription}
     />
 
     <div className="hero-text">
-        <h1 className="title">
-            AI Test Intelligence Platform
-        </h1>
+    <h1 className="title">
+        AI Test Intelligence Platform
+    </h1>
 
-        <p className="subtitle">
-            Analyze Playwright, Selenium & API Test Failures using AI
-        </p>
-        {showInstall && (
-  <button className="install-btn" onClick={installApp}>
-    📱 Install AI Test Intelligence
-  </button>
-)}
-    </div>
+    <p className="subtitle">
+        Analyze Playwright, Selenium & API Test Failures using AI
+    </p>
+
+    {showInstall && (
+      <button className="install-btn" onClick={installApp}>
+        📱 Install AI Test Intelligence
+      </button>
+    )}
+</div>
 
 </div>
-            <Dashboard history={history} />
+<nav className="top-nav">
+    <a href="#dashboard">📊 Dashboard</a>
 
+    <a href="#analyzer">📄 Log Analyzer</a>
+
+    <a href="#testcases">🧪 Test Cases</a>
+
+    <a href="#bugreport">🐞 Bug Report</a>
+
+    <a href="#history">📜 History</a>
+</nav>
+    <div id="dashboard">
+      <Dashboard history={history} />
+    </div>
       <Charts history={history} />
 
-      <TestCaseGenerator/>
-      <BugReportGenerator />
+      <div id="testcases">
+        <TestCaseGenerator />
+      </div>    
 
-          <History
-      history={history}
-      setResult={setResult}
-      search={search}
-      setSearch={setSearch}
-    />
+          <div id="bugreport">
+      <BugReportGenerator />
+    </div>
+
+         <div id="history">
+  <History
+    history={history}
+    setResult={setResult}
+    search={search}
+    setSearch={setSearch}
+  />
+</div>
       <button
   onClick={() => {
     localStorage.removeItem("analysisHistory");
@@ -245,7 +265,7 @@ ${result.jiraDescription}
   🗑 Clear History
 </button>
 
-<div className="card">
+<div id="analyzer" className="card">
 
         <h2>📂 Upload or Paste Log</h2>
 
